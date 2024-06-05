@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { NavigationModule } from './navigation/navigation.module';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  styleUrls: ['./app.component.css'],
+  imports:[RouterModule,NavigationModule]
 })
 export class AppComponent {
-  title = 'kami-hr';
+  title = 'navigation-site';
+
+  constructor(
+    public router: Router,
+		public activatedRoute: ActivatedRoute,
+  ) {}
 }
